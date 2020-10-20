@@ -121,12 +121,12 @@ resource "aws_instance" "hashicat" {
   key_name                    = aws_key_pair.hashicat.key_name
   associate_public_ip_address = true
   subnet_id                   = aws_subnet.hashicat.id
-  vpc_security_group_ids      = [aws_security_group.hashicat.id]
-  department                  = "devops"
-  Billable                    = "true"
+  vpc_security_group_ids      = [aws_security_group.hashicat.id]  
 
   tags = {
     Name = "${var.prefix}-hashicat-instance"
+    department = "devops"
+    Billable = "true"
   }
 }
 
